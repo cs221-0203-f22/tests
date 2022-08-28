@@ -1,0 +1,29 @@
+[[tests]]
+name = "o-in-foobar"
+input = ["./$project", "foobar", "o"]
+expected = "2"
+rubric = 20
+
+[[tests]]
+name = "r-in-foobar"
+input = ["./$project", "foobar", "r"]
+expected = "1"
+rubric = 20
+
+[[tests]]
+name = "oo-in-foobar"
+input = ["./$project", "foobar", "oo"]
+expected = "1"
+rubric = 20
+
+[[tests]]
+name = "fo-in-foobar"
+input = ["./$project", "foobar", "fo"]
+expected = "1"
+rubric = 20
+
+[[tests]]
+name = "invalid"
+input = ["./$project", "foobar"]
+expected = "invalid arguments"
+rubric = 20
