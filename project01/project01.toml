@@ -1,0 +1,47 @@
+[[tests]]
+name = "sunshine"
+input = ["./$project", "10k", "sunshine"]
+expected = "10k: match"
+rubric = 25
+
+[[tests]]
+name = "sunshone"
+input = ["./$project", "10k", "sunshone"]
+expected = "10k: no match"
+rubric = 25
+
+[[tests]]
+name = "y@nk33s"
+input = ["./$project", "l33t", "y@nk33s"]
+expected = "l33t: match"
+rubric = 5
+
+[[tests]]
+name = "y@nk33ss"
+input = ["./$project", "l33t", "y@nk33ss"]
+expected = "l33t: no match"
+rubric = 5
+
+[[tests]]
+name = "yankees1"
+input = ["./$project", "plus1", "yankees1"]
+expected = "plus1: match"
+rubric = 5
+
+[[tests]]
+name = "yankeesx1"
+input = ["./$project", "plus1", "yankeesx1"]
+expected = "plus1: no match"
+rubric = 5
+
+[[tests]]
+name = "foobar"
+input = ["./$project", "entropy", "foobar"]
+expected = "bits of entropy: 28"
+rubric = 10
+
+[[tests]]
+name = "passphrase"
+input = ["./$project", "entropy", "purple cow stapler mouse"]
+expected = "bits of entropy: 140"
+rubric = 10
