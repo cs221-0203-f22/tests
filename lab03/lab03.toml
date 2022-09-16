@@ -1,0 +1,46 @@
+[[tests]]
+name = "fruit"
+input = ["./$project", "lab03.csv", "apples 20", "oranges 10"]
+output = "lab03.csv"
+expected = """
+name,quantity
+apples,20
+oranges,10
+"""
+rubric = 40
+
+[[tests]]
+name = "parts"
+input = ["./$project", "lab03.csv", "widgets 1024", "sprockets 2048", "chips 4096"]
+output = "lab03.csv"
+expected = """
+name,quantity
+widgets,1024
+sprockets,2048
+chips,4096
+"""
+rubric = 40
+
+[[tests]]
+name = "usage"
+input = ["./$project", "lab03.csv"]
+expected = "usage: lab03 filename 'name qty' ['name qty']"
+rubric = 4
+
+[[tests]]
+name = "not-a-number"
+input = ["./$project", "lab03.csv", "apples 20", "oranges asdf"]
+expected = "not a number: asdf"
+rubric = 4
+
+[[tests]]
+name = "overflow"
+input = ["./$project", "lab03.csv", "supercalifragilistic 20", "oranges 10"]
+expected = "string overflow: supercalifragilistic 20"
+rubric = 6
+
+[[tests]]
+name = "fopen"
+input = ["./$project", "/usr/bin/lab03.csv", "apples 20", "oranges 10"]
+expected = "failed to open: /usr/bin/lab03.csv"
+rubric = 6
