@@ -1,0 +1,52 @@
+[[tests]]
+name = "one-item"
+input = ["./$project", "$project_tests/one-item.csv"]
+expected = """
+widgets: quantity: 1, aisle: 1, bin: 1
+"""
+rubric = 16
+
+[[tests]]
+name = "append"
+input = ["./$project", "$project_tests/append.csv"]
+expected = """
+widgets: quantity: 1, aisle: 1, bin: 1
+sprockets: quantity: 2, aisle: 2, bin: 2
+"""
+rubric = 16
+
+[[tests]]
+name = "prepend"
+input = ["./$project", "$project_tests/prepend.csv"]
+expected = """
+widgets: quantity: 1, aisle: 1, bin: 1
+sprockets: quantity: 2, aisle: 2, bin: 2
+"""
+rubric = 16
+
+[[tests]]
+name = "reverse"
+input = ["./$project", "$project_tests/reverse.csv"]
+expected = """
+widgets: quantity: 1, aisle: 1, bin: 1
+sprockets: quantity: 2, aisle: 2, bin: 2
+hammers: quantity: 3, aisle: 4, bin: 5
+nails: quantity: 4, aisle: 5, bin: 6
+screwdrivers: quantity: 5, aisle: 6, bin: 7
+screws: quantity: 6, aisle: 7, bin: 8
+"""
+rubric = 16
+
+[[tests]]
+name = "alternating"
+input = ["./$project", "$project_tests/alternating.csv"]
+expected = """
+widgets: quantity: 1, aisle: 1, bin: 1
+sprockets: quantity: 2, aisle: 2, bin: 2
+hammers: quantity: 3, aisle: 4, bin: 5
+nails: quantity: 4, aisle: 5, bin: 6
+screwdrivers: quantity: 5, aisle: 6, bin: 7
+screws: quantity: 6, aisle: 7, bin: 8
+"""
+rubric = 16
+
