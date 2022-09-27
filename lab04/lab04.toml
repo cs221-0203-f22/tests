@@ -1,0 +1,89 @@
+[[tests]]
+name = "empty"
+input = ["./$project", "_", "_", "_", "_", "_", "_", "_", "_", "_"]
+expected = """
+ _ | _ | _
+---+---+---
+ _ | _ | _
+---+---+---
+ _ | _ | _
+"""
+rubric = 14
+
+[[tests]]
+name = "board"
+input = ["./$project", "X", "_", "O", "_", "X", "_", "_", "_", "O"]
+expected = """
+ X | _ | O
+---+---+---
+ _ | X | _
+---+---+---
+ _ | _ | O
+"""
+rubric = 14
+
+[[tests]]
+name = "xhoriz"
+input = ["./$project", "X", "X", "X", "_", "O", "_", "_", "_", "O"]
+expected = """
+ X | X | X
+---+---+---
+ _ | O | _
+---+---+---
+ _ | _ | O
+X wins
+"""
+rubric = 14
+
+[[tests]]
+name = "overt"
+input = ["./$project", "X", "X", "O", "_", "_", "O", "_", "_", "O"]
+expected = """
+ X | X | O
+---+---+---
+ _ | _ | O
+---+---+---
+ _ | _ | O
+O wins
+"""
+rubric = 14
+
+[[tests]]
+name = "diag1"
+input = ["./$project", "O", "X", "X", "_", "O", "X", "X", "_", "O"]
+expected = """
+ O | X | X
+---+---+---
+ _ | O | X
+---+---+---
+ X | _ | O
+O wins
+"""
+rubric = 14
+
+[[tests]]
+name = "diag2"
+input = ["./$project", "O", "X", "X", "_", "X", "X", "X", "_", "O"]
+expected = """
+ O | X | X
+---+---+---
+ _ | X | X
+---+---+---
+ X | _ | O
+X wins
+"""
+rubric = 14
+
+[[tests]]
+name = "draw"
+input = ["./$project", "X", "O", "X", "O", "X", "O", "O", "X", "O"]
+expected = """
+ X | O | X
+---+---+---
+ O | X | O
+---+---+---
+ O | X | O
+draw
+"""
+rubric = 16
+
