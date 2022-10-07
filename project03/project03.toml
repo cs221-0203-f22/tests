@@ -1,0 +1,64 @@
+[[tests]]
+name = "first"
+input = ["./$project", "_", "_", "_", "_", "_", "_", "_", "_", "_"]
+expected = """
+ _ | _ | _
+---+---+---
+ _ | _ | _
+---+---+---
+ _ | _ | _
+O: 0 0
+"""
+rubric = 14
+
+[[tests]]
+name = "offensive1"
+input = ["./$project", "O", "_", "O", "X", "_", "X", "_", "_", "_"]
+expected = """
+ O | _ | O
+---+---+---
+ X | _ | X
+---+---+---
+ _ | _ | _
+O: 0 1
+"""
+rubric = 14
+
+[[tests]]
+name = "offensive2"
+input = ["./$project", "O", "_", "X", "X", "O", "_", "_", "_", "_"]
+expected = """
+ O | _ | X
+---+---+---
+ X | O | _
+---+---+---
+ _ | _ | _
+O: 2 2
+"""
+rubric = 14
+
+[[tests]]
+name = "defensive1"
+input = ["./$project", "X", "_", "X", "_", "O", "_", "_", "_", "_"]
+expected = """
+ X | _ | X
+---+---+---
+ _ | O | _
+---+---+---
+ _ | _ | _
+O: 0 1
+"""
+rubric = 14
+
+[[tests]]
+name = "defensive2"
+input = ["./$project", "X", "_", "O", "_", "X", "_", "_", "_", "_"]
+expected = """
+ X | _ | O
+---+---+---
+ _ | X | _
+---+---+---
+ _ | _ | _
+O: 2 2
+"""
+rubric = 14
