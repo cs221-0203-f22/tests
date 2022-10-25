@@ -1,0 +1,60 @@
+[[tests]]
+name = "simple"
+input = ["./$project", "1 + 1"]
+rubric = 25
+expected = """
+TK_INTLIT("1")
+TK_PLUS("+")
+TK_INTLIT("1")
+TK_EOT("")
+"""
+
+[[tests]]
+name = "binlit"
+input = ["./$project", "0b1101 * 0b10"]
+rubric = 25
+expected = """
+TK_BINLIT("1101")
+TK_MULT("*")
+TK_BINLIT("10")
+TK_EOT("")
+"""
+
+[[tests]]
+name = "hexlit"
+input = ["./$project", "0xbadcafe - 0xcafe"]
+rubric = 25
+expected = """
+TK_HEXLIT("badcafe")
+TK_MINUS("-")
+TK_HEXLIT("cafe")
+TK_EOT("")
+"""
+
+[[tests]]
+name = "kitchensink"
+input = ["./$project", "(((0xbadcafe - 0xcafe) + (0b11010101 - 3)) * 0x7fffff) / 2"]
+rubric = 25
+expected = """
+TK_LPAREN("(")
+TK_LPAREN("(")
+TK_LPAREN("(")
+TK_HEXLIT("badcafe")
+TK_MINUS("-")
+TK_HEXLIT("cafe")
+TK_RPAREN(")")
+TK_PLUS("+")
+TK_LPAREN("(")
+TK_BINLIT("11010101")
+TK_MINUS("-")
+TK_INTLIT("3")
+TK_RPAREN(")")
+TK_RPAREN(")")
+TK_MULT("*")
+TK_HEXLIT("7fffff")
+TK_RPAREN(")")
+TK_DIV("/")
+TK_INTLIT("2")
+TK_EOT("")
+"""
+
