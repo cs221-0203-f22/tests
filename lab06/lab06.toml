@@ -1,0 +1,111 @@
+[[tests]]
+name = "tree1"
+input = ["./$project", "-e", "1 + 2"]
+rubric = 10
+expected = """
+EXPR OPER2 PLUS
+..EXPR INTVAL 1
+..EXPR INTVAL 2
+"""
+
+[[tests]]
+name = "tree2"
+input = ["./$project", "-e", "(1 + 2) * 3"]
+rubric = 10
+expected = """
+EXPR OPER2 MULT
+..EXPR OPER2 PLUS
+....EXPR INTVAL 1
+....EXPR INTVAL 2
+..EXPR INTVAL 3
+"""
+
+[[tests]]
+name = "tree3"
+input = ["./$project", "-e", "4 * (10 / 5)"]
+rubric = 10
+expected = """
+EXPR OPER2 MULT
+..EXPR INTVAL 4
+..EXPR OPER2 DIV
+....EXPR INTVAL 10
+....EXPR INTVAL 5
+"""
+
+[[tests]]
+name = "tree4"
+input = ["./$project", "-e", "(2 * (3 + (1 + 1)))"]
+rubric = 10
+expected = """
+EXPR OPER2 MULT
+..EXPR INTVAL 2
+..EXPR OPER2 PLUS
+....EXPR INTVAL 3
+....EXPR OPER2 PLUS
+......EXPR INTVAL 1
+......EXPR INTVAL 1
+"""
+
+[[tests]]
+name = "tree5"
+input = ["./$project", "-e", "-4 + 3"]
+rubric = 10
+expected = """
+EXPR OPER2 PLUS
+..EXPR OPER1 MINUS
+....EXPR INTVAL 4
+..EXPR INTVAL 3
+"""
+
+[[tests]]
+name = "tree6"
+input = ["./$project", "-e", "-4 + -4"]
+rubric = 10
+expected = """
+EXPR OPER2 PLUS
+..EXPR OPER1 MINUS
+....EXPR INTVAL 4
+..EXPR OPER1 MINUS
+....EXPR INTVAL 4
+"""
+
+[[tests]]
+name = "hexlit1"
+input = ["./$project", "-e", "1 + 0xa"]
+rubric = 10
+expected = """
+EXPR OPER2 PLUS
+..EXPR INTVAL 1
+..EXPR INTVAL 10
+"""
+
+[[tests]]
+name = "hexlit2"
+input = ["./$project", "-e", "0xff + 0xa"]
+rubric = 10
+expected = """
+EXPR OPER2 PLUS
+..EXPR INTVAL 255
+..EXPR INTVAL 10
+"""
+
+[[tests]]
+name = "binlit2"
+input = ["./$project", "-e", "0b11111111 + 1"]
+rubric = 10
+expected = """
+EXPR OPER2 PLUS
+..EXPR INTVAL 255
+..EXPR INTVAL 1
+"""
+
+[[tests]]
+name = "binhex"
+input = ["./$project", "-e", "0b11111111 + 0xff"]
+rubric = 10
+expected = """
+EXPR OPER2 PLUS
+..EXPR INTVAL 255
+..EXPR INTVAL 255
+"""
+
