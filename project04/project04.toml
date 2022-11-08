@@ -1,0 +1,65 @@
+[[tests]]
+name = "01"
+input = ["./$project", "-e", "1 + 1"]
+expected = "2"
+rubric = 5
+
+[[tests]]
+name = "02"
+input = ["./$project", "-e", "10", "-b", "16"]
+expected = "0x0000000A"
+rubric = 5
+
+[[tests]]
+name = "03"
+input = ["./$project", "-e", "10 + 1"]
+expected = "11"
+rubric = 5
+
+[[tests]]
+name = "04"
+input = ["./$project", "-e", "10 + 1", "-b", "16"]
+expected = "0x0000000B"
+rubric = 5
+
+[[tests]]
+name = "05"
+input = ["./$project", "-e", "10", "-b", "2"]
+expected = "0b00000000000000000000000000001010"
+rubric = 5
+
+[[tests]]
+name = "06"
+input = ["./$project", "-e", "0x0A", "-b", "10"]
+expected = "10"
+rubric = 5
+
+[[tests]]
+name = "7"
+input = ["./$project", "-e", "((1 + 1) * 8)", "-b", "16"]
+expected = "0x00000010"
+rubric = 10
+
+[[tests]]
+name = "8"
+input = ["./$project", "-e", "((1 + 1) * 0x10) >> 1", "-b", "2"]
+expected = "0b00000000000000000000000000010000"
+rubric = 10
+
+[[tests]]
+name = "9"
+input = ["./$project", "-e", "(4 ^ 3) | (1 << 16)", "-b", "16"]
+expected = "0x00010007"
+rubric = 10
+
+[[tests]]
+name = "10"
+input = ["./$project", "-e", "~((4 ^ 3) | (1 << 16))", "-b", "16"]
+expected = "0xFFFEFFF8"
+rubric = 10
+
+[[tests]]
+name = "11"
+input = ["./$project", "-e", "0b11010011 & 211", "-b", "16"]
+expected = "0x000000d3"
+rubric = 10
